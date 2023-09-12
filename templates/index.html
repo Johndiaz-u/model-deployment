@@ -8,11 +8,34 @@
     <style>
         body {
             text-align: center;
+            background-color: #b0e0e6; /* Fondo azul pastel */
         }
 
-        button {
-            color: aliceblue;
-            background-color: blue;
+        /* Estilo para el botón Classifier */
+        .classifier-button {
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Estilo para el botón Reset */
+        .reset-button {
+            background-color: #f00; /* Rojo */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        /* Estilo cuando se pasa el mouse sobre el botón */
+        .classifier-button:hover, .reset-button:hover {
+            background-color: #0056b3; /* Azul más oscuro */
         }
     </style>
 </head>
@@ -24,13 +47,10 @@
             <textarea rows="12" cols="60" name="content" placeholder="Enter your email here"
                 autocomplete="off">{{ email }}</textarea>
             <div>
-                <button type="submit">
-                    Button
-                </button>
-                <a href="/">Reset</a>
+                <button type="submit" class="classifier-button">Classifier</button>
+                <a href="/" class="reset-button">Reset</a>
             </div>
         </form>
-
     </div>
     <div>
         {% if prediction %}
@@ -40,8 +60,9 @@
         <h2 style="color: green">Not Spam</h2>
         {% endif %}
         {% endif %}
-        <!-- <p id="display"></p> -->
     </div>
 </body>
 
 </html>
+
+
